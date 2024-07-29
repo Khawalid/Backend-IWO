@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 const corsOptions = {
-  origin: 'http://iwo.org.pk', // Allow your frontend domain
+  origin: 'https://iwo.org.pk', // Allow your frontend domain
   optionsSuccessStatus: 200
 };
 
