@@ -5,8 +5,13 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+const corsOptions = {
+  origin: 'http://iwo.org.pk', // Allow your frontend domain
+  optionsSuccessStatus: 200
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const formRoutes = require("../src/routes/form");
