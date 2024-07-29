@@ -1,10 +1,8 @@
 const nodemailer = require('nodemailer');
-const formService = require("../services/form");
 
 exports.saveFormData = async (req, res) => {
   try {
     const formData = req.body;
-    const savedForm = await formService.saveFormData(formData);
 
     // Email configuration
     const transporter = nodemailer.createTransport({
@@ -33,7 +31,7 @@ exports.saveFormData = async (req, res) => {
       console.log('Message sent: %s', info.messageId);
     });
 
-    res.status(201).json({ message: "Form data saved and email sent successfully", data: savedForm });
+    res.status(201).json({ message: "Form data received and email sent successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
